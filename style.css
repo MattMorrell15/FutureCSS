@@ -1,51 +1,36 @@
 @layer demo {
-    :root {
-      /* CHANGE ME! */
-      --color1: blue;
-      --color2: white;
+    h1 {
+      text-wrap: balance;
+      max-inline-size: 25ch;
+      font-size: clamp(2rem, 5vw, 5rem);
+      margin-inline: auto;
+      color: white;
+      text-shadow: 0 1px 1px #000;
     }
     
-    .srgb {
-      background: color-mix(in srgb, var(--color1), var(--color2));
+    .subhead {
+      text-wrap: balance;
+      max-inline-size: 60ch;
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin-inline: auto;
+      color: hsl(0 0% 80%);
     }
-    .linear-srgb {
-      background: color-mix(in srgb-linear, var(--color1), var(--color2));
-    }
-    .hsl {
-      background: color-mix(in hsl, var(--color1), var(--color2));
-    }
-    .hwb {
-      background: color-mix(in hwb, var(--color1), var(--color2));
-    }
-    .lch {
-      background: color-mix(in lch, var(--color1), var(--color2));
-    }
-    .oklch {
-      background: color-mix(in oklch, var(--color1), var(--color2));
-    }
-    .lab {
-      background: color-mix(in lab, var(--color1), var(--color2));
-    }
-    .oklab {
-      background: color-mix(in oklab, var(--color1), var(--color2));
-    }
-    .xyz {
-      background: color-mix(in xyz, var(--color1), var(--color2));
+    
+    section {
+      background: 
+        linear-gradient(#000d 0 0),
+        url("https://assets.codepen.io/2585/sean-pollock-PhYq704ffdA-unsplash.jpg");
+      background-size: cover;
+      background-position: center;
+      display: grid;
+      gap: 2ch;
+      place-content: center;
+      text-align: center;
     }
   }
   
   @layer demo.support {
-    .mix {
-      max-inline-size: 90vw;
-      aspect-ratio: 4/1;
-      display: flex;
-      place-content: center;
-      place-items: center;
-      color: black;
-      font-size: clamp(1rem, 5vmin, 2rem);
-      padding: 2ch;
-    }
-    
     * {
       box-sizing: border-box;
       margin: 0;
@@ -53,29 +38,11 @@
   
     html {
       block-size: 100%;
-      color-scheme: dark light;
     }
   
     body {
       min-block-size: 100%;
       font-family: system-ui, sans-serif;
-  
       display: grid;
-      place-content: center;
-    }
-  }
-  
-  @supports (background: color-mix(in lch, black, white)) {
-    .no-support {
-      display: none
-    }
-  }
-  
-  @supports not (background: color-mix(in lch, black, white)) {
-    .no-support {
-      display: block;
-    }
-    .mix {
-      display: none
     }
   }
