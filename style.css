@@ -72,31 +72,31 @@ background-color: var(--pink);
 
 
 @layer base {
-:root {
-  --red: #f65555;
-  --orange: orange;
-  --yellow: #ffdc1f;
-  --green: #4dc04d;
-  --blue: #38a4f7;
-  --violet: #c282ee;
-  --pink: #ff9bde;
-}
+  :root {
+    --red: #f65555;
+    --orange: orange;
+    --yellow: #ffdc1f;
+    --green: #4dc04d;
+    --blue: #38a4f7;
+    --violet: #c282ee;
+    --pink: #ff9bde;
+  }
 
-body {
-  font-family: system-ui;
-  display: grid;
-  place-items: center;
-  min-height: 80vh;
-  margin: 0;
-  box-sizing: border-box;
-}
+  body {
+    font-family: system-ui;
+    display: grid;
+    place-items: center;
+    min-height: 80vh;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-* {
-  box-sizing: border-box;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-//   remove default padding
-[popup="" i] {
-  padding: 0;
-}
+  
+  [popup="" i] {
+    padding: 0;
+  }
 }
