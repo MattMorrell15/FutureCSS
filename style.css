@@ -1,48 +1,101 @@
-html {
-    h1 {
-      text-wrap: balance;
-      max-inline-size: 25ch;
-      font-size: clamp(2rem, 5vw, 5rem);
-      margin-inline: auto;
-      color: white;
-      text-shadow: 0 1px 1px #000;
-    }
-    
-    .subhead {
-      text-wrap: balance;
-      max-inline-size: 60ch;
-      font-size: 1.25rem;
-      font-weight: 300;
-      margin-inline: auto;
-      color: hsl(0 0% 80%);
-    }
-    
-    section {
-      background: 
-        linear-gradient(#000d 0 0),
-        url("https://assets.codepen.io/2585/sean-pollock-PhYq704ffdA-unsplash.jpg");
-      background-size: cover;
-      background-position: center;
-      display: grid;
-      gap: 2ch;
-      place-content: center;
-      text-align: center;
-    }
-  }
-  
-  @layer demo.support {
-    * {
-      box-sizing: border-box;
-      margin: 0;
-    }
-  
-    html {
-      block-size: 100%;
-    }
-  
-    body {
-      min-block-size: 100%;
-      font-family: system-ui, sans-serif;
-      display: grid;
-    }
-  }
+button {
+  background: #eee;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+  min-width: 300px;
+  font-size: 16px;
+  border: 3px solid transparent;
+  border-image: linear-gradient(-45deg, var(--red) 0%, var(--yellow) 25%, var(--blue) 50%, var(--pink) 75%);
+  border-image-slice: 1;
+  background: aliceblue;
+}
+
+label {
+font-size: 80%;
+}
+
+option {
+display: grid;
+grid-template-columns: auto 1fr;
+align-items: center;
+background: white;
+}
+
+option:hover,
+option:focus {
+background-color: aliceblue;
+}
+
+figure {
+width: 1em;
+height: 1em;
+border-radius: 1em;
+margin: 1rem;
+}
+
+[popup=""] {
+border: 3px solid transparent;
+border-image: linear-gradient(45deg, var(--red) 0%, var(--yellow) 25%, var(--blue) 50%, var(--pink) 75%);
+border-image-slice: 1;
+}
+
+.red {
+background-color: var(--red);
+}
+
+.orange {
+background-color: var(--orange);
+}
+
+.yellow {
+background-color: var(--yellow);
+}
+
+.green {
+background-color: var(--green);
+}
+
+.blue {
+background-color: var(--blue);
+}
+
+.violet {
+background-color: var(--violet);
+}
+
+.pink {
+background-color: var(--pink);
+}
+
+
+@layer base {
+:root {
+  --red: #f65555;
+  --orange: orange;
+  --yellow: #ffdc1f;
+  --green: #4dc04d;
+  --blue: #38a4f7;
+  --violet: #c282ee;
+  --pink: #ff9bde;
+}
+
+body {
+  font-family: system-ui;
+  display: grid;
+  place-items: center;
+  min-height: 80vh;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[popup="" i] {
+  padding: 0;
+}
+}
