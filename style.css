@@ -1,0 +1,81 @@
+@layer demo {
+    :root {
+      /* CHANGE ME! */
+      --color1: blue;
+      --color2: white;
+    }
+    
+    .srgb {
+      background: color-mix(in srgb, var(--color1), var(--color2));
+    }
+    .linear-srgb {
+      background: color-mix(in srgb-linear, var(--color1), var(--color2));
+    }
+    .hsl {
+      background: color-mix(in hsl, var(--color1), var(--color2));
+    }
+    .hwb {
+      background: color-mix(in hwb, var(--color1), var(--color2));
+    }
+    .lch {
+      background: color-mix(in lch, var(--color1), var(--color2));
+    }
+    .oklch {
+      background: color-mix(in oklch, var(--color1), var(--color2));
+    }
+    .lab {
+      background: color-mix(in lab, var(--color1), var(--color2));
+    }
+    .oklab {
+      background: color-mix(in oklab, var(--color1), var(--color2));
+    }
+    .xyz {
+      background: color-mix(in xyz, var(--color1), var(--color2));
+    }
+  }
+  
+  @layer demo.support {
+    .mix {
+      max-inline-size: 90vw;
+      aspect-ratio: 4/1;
+      display: flex;
+      place-content: center;
+      place-items: center;
+      color: black;
+      font-size: clamp(1rem, 5vmin, 2rem);
+      padding: 2ch;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+  
+    html {
+      block-size: 100%;
+      color-scheme: dark light;
+    }
+  
+    body {
+      min-block-size: 100%;
+      font-family: system-ui, sans-serif;
+  
+      display: grid;
+      place-content: center;
+    }
+  }
+  
+  @supports (background: color-mix(in lch, black, white)) {
+    .no-support {
+      display: none
+    }
+  }
+  
+  @supports not (background: color-mix(in lch, black, white)) {
+    .no-support {
+      display: block;
+    }
+    .mix {
+      display: none
+    }
+  }
